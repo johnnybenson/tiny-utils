@@ -14,7 +14,7 @@ module TinyUtils
     # @param {int} length
     # @param {string} alphabet
     # @returns {string}
-    def encode_id(id, salt: SALT, length: LENGTH, alphabet: ALPHABET)
+    def encode(id, salt: SALT, length: LENGTH, alphabet: ALPHABET)
       Hashids.new(salt, length, alphabet).encode(id)
     end
 
@@ -24,7 +24,7 @@ module TinyUtils
     # @param {int} length
     # @param {string} alphabet
     # @returns {int}
-    def decode_id(encoded_id, salt: SALT, length: LENGTH, alphabet: ALPHABET)
+    def decode(encoded_id, salt: SALT, length: LENGTH, alphabet: ALPHABET)
       Hashids.new(salt, length, alphabet).decode(encoded_id).first
     end
   end

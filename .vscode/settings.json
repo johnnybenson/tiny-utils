@@ -1,0 +1,9 @@
+{
+  "editor.formatOnSave": true,
+  "editor.trimAutoWhitespace": true,
+  "files.trimTrailingWhitespace": true,
+  "ruby.format": "rubocop",
+  "ruby.intellisense": "rubyLocate",
+  "ruby.lint": { "rubocop": true },
+  "ruby.useBundler": true
+}

@@ -63,16 +63,16 @@ RSpec.describe TinyUtils do
     end
   end
 
-  describe '.encode_id(int)' do
-    let(:method) { :encode_id }
+  describe '.encode(int)' do
+    let(:method) { :encode }
 
     context "with any id" do
       let(:args) { [id] }
       let(:kwargs) { { salt: "pepper" } }
       let(:id) { 123 }
 
-      it "equals .decode_id" do
-        expect(id).to eq(described_class.decode_id(subject, salt: "pepper"))
+      it "equals .decode" do
+        expect(id).to eq(described_class.decode(subject, salt: "pepper"))
       end
 
       context "with different salts" do
@@ -81,7 +81,7 @@ RSpec.describe TinyUtils do
         let(:salt2) { "cheese" }
 
         it "returns different encoded ids" do
-          expect(described_class.encode_id(id, salt: salt1)).not_to eq(described_class.encode_id(id, salt: salt2))
+          expect(described_class.encode(id, salt: salt1)).not_to eq(described_class.encode(id, salt: salt2))
         end
       end
     end
