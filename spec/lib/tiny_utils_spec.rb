@@ -97,6 +97,18 @@ RSpec.describe TinyUtils do
     end
   end
 
+  describe '.average_array_values(array)' do
+    let(:method) { :average_array_values }
+    let(:args) { [array] }
+    let(:array) { [0, 18, 50, 100] }
+    let(:expects) { 42.0 }
+
+    context "returns average of 42.0" do
+      it { is_expected.to be_an(Float) }
+      it { is_expected.to eq(expects) }
+    end
+  end
+
   describe '.filter_hash_by_keys(hash)' do
     let(:method) { :filter_hash_by_keys }
     let(:args) { [hash, keys] }
