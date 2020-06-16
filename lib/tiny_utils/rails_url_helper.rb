@@ -14,7 +14,7 @@ module TinyUtils
 
     # TinyUtils.url_helper.some_path(params...)
     def url_helper
-      TinyUtils::RailsUrl.instance
+      TinyUtils::RailsUrlHelper.instance
     end
   end
 end
